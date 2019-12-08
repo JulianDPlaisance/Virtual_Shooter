@@ -3,6 +3,7 @@
 
 #include "SteeringActor_CPP.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "Components/ActorComponent.h"
 
 // Sets default values
@@ -10,8 +11,8 @@ ASteeringActor_CPP::ASteeringActor_CPP()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
-	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh"));
+
+	StaticMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Skeletal Mesh"));
 	StaticMeshComponent->SetupAttachment(SceneComponent);
 	//StaticMeshComponent->GetMass();
 	SteeringBehavior = CreateDefaultSubobject<USteeringBehavior_CPP>(TEXT("Steering Behavior"));

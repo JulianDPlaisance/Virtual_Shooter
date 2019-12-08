@@ -76,6 +76,8 @@ public:
 	// Avoids all actors with actor Tag of "Wall". If actor is not tagged behavior will ignore that game object.
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "NPC Behavior")
 		FVector WallAvoidance();
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPC Behavior", meta = (AllowPrivateAccess = "true"))
+		AActor* DynamicTarget;
 
 protected:
 	// Called when the game starts
@@ -105,8 +107,7 @@ private:
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPC Behavior", meta = (AllowPrivateAccess = "true"))
 			AActor* StaticTarget;
 		//Dynamic target (Moves continuously)
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPC Behavior", meta = (AllowPrivateAccess = "true"))
-			AActor* DynamicTarget;
+		
 
 		/**************** Steering Behavior Functions ****************/
 		// Returns whether a flag is set to true on our NPC Enum Bitmask

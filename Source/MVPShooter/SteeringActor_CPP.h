@@ -18,6 +18,8 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Properties", meta = (DisplayName = "Skeletal Mesh", AllowPrivateAccess = "true"))
+		USkeletalMeshComponent* StaticMeshComponent;
 
 protected:
 	// Called when the game starts or when spawned
@@ -33,7 +35,6 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Properties", meta = (AllowPrivateAccess = "true"))
 		USteeringBehavior_CPP* SteeringBehavior;
 
-	UPROPERTY(VisibleAnywhere, Category = "Properties", meta = (DisplayName = "Static Mesh", AllowPrivateAccess = "true"))
-		UStaticMeshComponent* StaticMeshComponent;
+
 	
 };

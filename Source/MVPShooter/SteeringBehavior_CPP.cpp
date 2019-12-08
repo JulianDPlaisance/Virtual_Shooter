@@ -61,7 +61,7 @@ void USteeringBehavior_CPP::BeginPlay()
 		}
 	}
 
-	UStaticMeshComponent* StaticMesh = GetOwner()->FindComponentByClass<UStaticMeshComponent>();
+	USkeletalMeshComponent* StaticMesh = GetOwner()->FindComponentByClass<USkeletalMeshComponent>();
 	if (StaticMesh->IsSimulatingPhysics()) { Mass = StaticMesh->GetMass(); }
 
 	//Prints bit value to Output Log (Testing purposes)
